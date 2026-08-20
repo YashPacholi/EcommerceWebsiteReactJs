@@ -117,29 +117,34 @@ const toggleseach = (e)=>{
       </div>
 
       {/* Mobile Menu Button */}
-      <div className="flex w-full max-w-sm items-center gap-2 px-4 md:hidden">
+{/* Mobile Search + Menu Button */}
+<div className="flex flex-1 items-center gap-2 md:hidden">
   <input
     type="text"
     placeholder="Search products..."
     value={search}
     onChange={(e) => setSearch(e.target.value)}
     onKeyDown={toggleseach}
-    className="flex-1 rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-500"
+    className="min-w-0 flex-1 rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-blue-500"
+    aria-label="Search products"
   />
 
   <button
     onClick={handleSearch}
-    className="rounded-lg bg-black p-3 text-white hover:bg-blue-600"
+    className="shrink-0 rounded-lg bg-black p-3 text-white hover:bg-blue-600"
+    aria-label="Search"
   >
     <Search size={20} />
   </button>
+
+  <button
+    className="shrink-0 rounded-md p-2 transition-colors duration-200 hover:bg-gray-100"
+    onClick={() => setIsMenuOpen(!isMenuOpen)}
+    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+  >
+    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+  </button>
 </div>
-      <button
-        className="rounded-md p-2 transition-colors duration-200 hover:bg-gray-100 md:hidden"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
