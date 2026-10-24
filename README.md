@@ -4,7 +4,7 @@ NOVA is a modern, responsive e-commerce website built with React. It includes pr
 
 ## 🚀 Live Demo
 
-**Live:** [ecommerce-website-react-redux-7le792e5u-techfest.vercel.app](https://ecommerce-website-react-redux-7le792e5u-techfest.vercel.app/)
+**Live:** [https://ecommerce-website-react-redux.vercel.app/)
 
 **GitHub:** Add your GitHub repository URL here
 
